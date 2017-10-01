@@ -1,5 +1,5 @@
-<section class="property-binding container">
-  <!-- <article>
+ <!-- <section class="property-binding container">
+  <article>
     <h3>Interpolação</h3>
     <p> String renderizada com interpoloção: {{ url }}</p>
     <p>Resultado de 1 + 1 é : {{ 1 + 1 }} </p>
@@ -11,7 +11,7 @@
     <h3>Property binding</h3>
     <img src="{{ urlImagem }}">
     <img [src]="urlImagem">
-  </article> -->
+  </article>
 
   <article>
     <h3> Class e Style Binding </h3>
@@ -52,6 +52,32 @@
        Danger
       </div>
 
+    </div>
+  </article>
+</section> -->
+
+<section class="event-binding container">
+  <article>
+    <h3>Event Binding</h3>
+    <div>
+      <button (click)="botaoClicado()"
+      class="btn btn-primary">Click Here</button>
+
+      <br/><br/>
+      <input type="text"
+      (keyup)="onKeyUp($event)"
+      (keyup.enter)="salvarValor($event.target.value)"
+      (blur)="salvarValor(campoInput.value)"
+      #campoInput/>
+      <p> Valor Atual : {{ valorAtual }}</p>
+      <p> Valor Salvo : {{ valorSalvo }}</p>
+
+      <br/> <br/>
+
+      <span
+      (mouseover)="onMouse()"
+      [class.highlight]="isMouseOver"
+      >Passe o mouse sobre mim</span>
     </div>
   </article>
 </section>

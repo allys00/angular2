@@ -10,6 +10,10 @@ export class DataBindingComponent implements OnInit {
   url:string = 'André Alys';
   cursoAngular: boolean = true;
   urlImagem = 'http://lorempixel.com/output/city-q-c-400-200-9.jpg';
+  valorAtual = '';
+  valorSalvo = '';
+  isMouseOver: boolean = false;
+
   getCurtirCurso(){
     return true;
   }
@@ -18,6 +22,21 @@ export class DataBindingComponent implements OnInit {
     return 1;
   }
 
+  botaoClicado(){
+    alert('Botão Clicado!!')
+  }
+  onKeyUp(evento: KeyboardEvent){
+    this.valorAtual = (<HTMLInputElement>evento.target).value;
+  }
+  salvarValor(valor){
+    this.valorSalvo = valor;
+  }
+  onMouse(){
+    this.isMouseOver = !this.isMouseOver;
+  }
+  outMouse(){
+    alert("mouseOut");
+  }
   constructor() { }
 
   ngOnInit() {
